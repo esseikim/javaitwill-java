@@ -1,0 +1,96 @@
+sql developers :   https://www.oracle.com/database/sqldeveloper/technologies/download/  개발환경, 이클립스와 같은. 압축폴더만 원하는 디렉토리에 옮겨놓으면 됨. 폴더 자체만 옮겨오면 됨. sqldeveloper.exe - 바로 가기
+https://www.oracle.com/database/technologies/xe-downloads.html  데이터베이스 서버  setup.exe 설치파일. 
+루트 다음 사용자에 설치됨. 사용자 -> 한글 안됨. 
+
+• SQL: Structured Query Language
+• DBMs(Database Management System)에서 데이터를 읽고 쓰고 삭제하는 등 데이터를 관리하기 위한 일종의 프로그램 언어
+• IBM 연구소에서 개발한 SEQUE :(Structured Egnlish Query Language)에서 유래
+• 국제표준기구(ISO)와 미국국립표준협회(ANSI)에서 RDBMS의 표준 언어로 SQL을 채택
+• SQL의 종류
+• DDL(Data Definition Language): CREATE, DROP, ALTER, TRUNCATE
+• DQL(Data Query Language): SELECT
+• DML(Data Manipulation Language): INSERT, UPDATE, DELETE
+• TCL(Transaction Control Language): COMMIT, ROLLBACK
+• PL/SQL: Procedural Language extension to SQL
+-SQL을 이용한 절차적 프로그래밍 언어
+-변수 선언과 사용, 제어문(IF, CASE, LOOP), 함수, 프로시저, 예외처리 등
+- 오라클 데이터베이스에서 사용하는 문법 : 국제표준에서 선택한 SQL을 오라클에서 사용. 실제로 문법이 돌아갈수있도록 언어를 만들어줌. 
+
+IBM 연구소에서 개발한 SEQUEL 시쿠얼 에서 유래
+국제표준기구-> 문법만 정의. 
+
+PL / SQL: 표준 + 변수선언과 사용, 제어문(if, case, loop)
+,함수, 프로시저, 예외처리  . 오라클에서만 적용되는 문법이 있음 
+oracle에서 표준 언어가 돌아갈 수 있게 만든 게 PL/SQL
+데이터베이스 제조사 관계없이 표준으로 사용하는 문법 : sql 
+c: 클라우드 기반의 데이터베이스. 버전별로 오라클의 차이가 있음. 
+
+DBMS: records / fields
+통계 :  observation(관측치) /  variables(변수)
+영어 이용 -> 단어만 알면 수월
+
+row(행): 컬럼에 해당하는 값들을 넣어줌. 하나의 관측치. observation, records, examples(머신러닝- 사례)   
+column(열) : variables, Fields, Attributes
+테이블이 서로서로 관계를 맺고있음 : 관계형 - 기본이 테이블 . 각 테이블끼리 관계를 가짐 
+관계형 데이터 베이스 : 표 형태로 데이터들을 저장하는 데이터 베이스, 이때 데이터들은 서로 관계를 맺고 있음
+   - 가장 대표적인 관계형 데이터 베이스 : Table
+
+맥: docker -> 오라클 이미지 다시 설치. 
+프로젝트 참고: 목차/ 만들게 된 계기/ 오라클테이블(테이블 캡쳐)/ MVC파일/ 로그인. 개인페이지. 회원가입/ DB등록.  
+
+Database 21 설치됐으면 cmd 들어가서
+
+"sqlplus / as sysdba" 입력 후 접속이 됐는지 확인
+- 접속이 확인됐으면 명령창 상태가 바뀜
+- 이때부터는 윈도우의 명령창 상태가 아니라 sql의 명령창 상태로 바뀜
+
+sqlplus / as sysdba : 정상적 설치 완료 시 돌아감. - 프로그램이름. db에 접속하는 명령프롬프트에서만 사용가능한 프로그램이름. / 사용하는 옵션들: 시스템의 admin 권한으로 로그인하겠다.
+SQL>접속시 프롬프트가 바뀐다. 윈도우의 프롬프트가 아니라 SQL 명령어를 실행시킬 수 있는 프롬프트 상태
+SQL> select sysdate from dual;  -> 오늘 날짜 출력
+
+SYSDATE
+--------
+23/04/07
+
+SQL>
+
+Database 깔았으면 내 pc에는 DB 서버가 항상 실행중임(재부팅해도)
+나의 pc 안에 DB가 돌고있는 것. 윈도우 os에 service로 등록되어있어서 부팅될때마다 db가 돌아감
+프로그램(sql developer)만 있으면 db에 "접속" as sysdba -> 명령어를 보내면 db가 명령결과를 보여줌. (db 서버에 as sysdba 접속 프로그램이 포함되어있음 )
+
+이때 데이터베이스에 연결할 수 있는 프로그램(SQL Developer)을 통해 명령어("sqlplus / as sysdba") 입력하면 Database에 접속됨 
+exit: 윈도우 명령창 상태로 돌아가는 명령어
+cmd 창에서 하면 불편한 점이 많으니깐 만든 프로그램: SQL Developer
+
+
+sql developer: db 접속, 명령
+자바11버전으로 만든 프로그램 -> JDK 포함되어있음. 
+sql developer에서 오라클데이터서버로 접속 성공
+질의 : quary  질의 결과는 아래창에. 
+SQL Developer 환경설정 
+UTF - 8
+nls: YYYY/MM/DD HH24:MI:SS
+행번호
+System이라는 계정을 사용할 수 있게 됐다. 
+연습 시 사용 안 할 것. 
+데이터베이스를 어드민 계정으로 여러가지 설정을 바꿀 수 있는 계정이라. 
+스캇이라는 다른 계정을 만들어서 연습용 테이블을 가지고 실습진행. 
+계정 만드는 명령어
+스캇 :  @ C:\app\ITWILL\product\21c\dbhomeXE\rdbms\admin   Scott이라는계정, 비밀번호, 테이블을 만들어주는 명령어(1.2.3)
+@: 어디에 있냐. 폴더 밑에 있는 이 sql파일을 실행하겠다. 
+파일을 실행하다. 실행하다가 아님 <- 2번째 아이콘
+
+접속
+
+최초 사용자 이름 : scott
+최초 비밀번호 : tiger
+
+1. ALTER SESSION SET "_ORACLE_SCRIPT" = true;  + (Ctrl enter) // Session이(가) 변경
+2. CREATE user scott IDENTIFIED by tiger;  // 사용자(계정) 생성, 비밀번호
+3. grant dba to scott; // Grant을(를) 성공했습니다. 테이블 crud 가 가능한 권한 부여
+
+테스트, SCOTT, 비밀번호 저장
+앞으로는 System의 admin 계정 사용 x. scott 이용. 설치 시 저계정 밖에 없어서 이 계정으로 설치. 권한 별로 계정 따로 만들어서 사용 일반적으로!
+파일전체 실행 새로고침  
+-1 : 창을 열때마다 새로운 계정이 생겨서 1 2 3 4 생김!
+테이블과 테이블을 연결해주는 column이 있음. 
